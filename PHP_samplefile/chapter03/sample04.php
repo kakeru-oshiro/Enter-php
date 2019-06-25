@@ -19,9 +19,12 @@
 <h2>オブジェクトを使って現在の時刻を表示する</h2>
 <pre>
 <?php
-date_default_timezone_set('Asia/Tokyo');
+// date_default_timezone_set('Asia/Tokyo');
+// $today = new DateTime();
+// print('現在は' . $today->format('G時 i分 s秒') . ' です');
 $today = new DateTime();
-print('現在は' . $today->format('G時 i分 s秒') . ' です');
+print($today -> format('G:i:s'));
+print('現在は'.$today -> format('G時 i分 s秒').'です');
 ?>
 </pre>
 </main>
