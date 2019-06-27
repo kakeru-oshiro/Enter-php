@@ -20,6 +20,19 @@
 <pre>
 <?php
 // PHP 5.3以前の場合は arrayを利用しましょう
+// $fruits = [
+//     'apple' => 'りんご',
+//     'grape' => 'ぶどう',
+//     'lemon' => 'レモン',
+//     'tomato' => 'トマト',
+//     'peach' => 'もも'
+// ];
+
+// foreach ($fruits as $english => $japanese) {
+//     print ($english' . ' : ' . $japanese . "\n");
+// }
+// $fruits = ['リンゴ', 'ブドウ', 'レモン', 'トマト', 'もも'];
+// print($fruits[2]);
 $fruits = [
     'apple' => 'りんご',
     'grape' => 'ぶどう',
@@ -29,8 +42,22 @@ $fruits = [
 ];
 
 foreach ($fruits as $english => $japanese) {
-    print ($english . ' : ' . $japanese . "\n");
+    print($english.':'.$japanese."\n");
+
 }
+
+$OS = [
+    'win' => 'Windows',
+    'mac' => 'Macintosh',
+    'iphone' => 'iPhone',
+    'ipad' => 'iPad',
+    'android' => 'Android'
+];
+
+foreach ($OS as $os => $os_name) {
+    print($os.'は'.$os_name.'です'."\n");
+}
+
 ?>
 </pre>
 </main>

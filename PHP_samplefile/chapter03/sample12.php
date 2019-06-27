@@ -19,8 +19,17 @@
 <h2>書式を整える - sprintf</h2>
 <pre>
 <?php
-$date = sprintf('%04d年 %02d月 %02d日', 2018, 1, 23);
-print($date);
+// $date = sprintf('%04d年 %02d月 %02d日', 2018, 1, 23);
+// print($date);
+// $fix = sprintf('%d', 10);
+// print($fix);
+$fix = sprintf('%d', 'abc');
+print($fix."\n");
+$fix = sprintf('%s', 'abc');
+print($fix."\n");
+$fix = sprintf('%05d', 10);
+print($fix);
+
 ?>
 </pre>
 </main>
