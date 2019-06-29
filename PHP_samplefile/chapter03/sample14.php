@@ -19,8 +19,16 @@
 <h2>ファイルの読み込み - file_get_contents</h2>
 <pre>
 <?php
-$news = file_get_contents('./news_data/news.txt');
-print($news);
+// $news = file_get_contents('./news_data/news.txt');
+// print($news);
+// $news = file_get_contents('./news_data/news.txt');
+// print($news."\n");
+// readfile('./news_data/news.txt');"
+$doc = file_get_contents('./news_data/news.txt');
+$doc .= "<br />2018-06-02 ニュースを追加しました。";
+file_put_contents('./news_data/news.txt', $doc);
+
+readfile('./news_data/news.txt');
 ?>
 </pre>
 </main>
