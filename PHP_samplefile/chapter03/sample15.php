@@ -18,7 +18,7 @@
 <main>
 <h2>XMLを読み込む</h2>
 <pre>
-<?php
+<!-- <?php
 $xmlTree = simplexml_load_file('https://h2o-space.com/feed');
 
 foreach($xmlTree->channel->item as $item) :
@@ -26,7 +26,13 @@ foreach($xmlTree->channel->item as $item) :
 ・<a href="<?php print($item->link); ?>"><?php print($item->title); ?></a>
 <?php
 endforeach;
+?> -->
+<?php
+$xmlTree = simplexml_load_file('https://h2o-space.com/feed');
+foreach($xmlTree->channel->item as $item) :
 ?>
+・<a href="<?php print($item->link); ?>"><?php print($item->title); ?></a>
+<?php endforeach?>
 </pre>
 </main>
 </body>
