@@ -18,10 +18,8 @@
 <main>
 <h2>フォームに入力した内容を取得する</h2>
 <pre>
-<!-- お名前： <?php print(htmlspecialchars($_REQUEST['my_name'], ENT_QUOTES)); ?> -->
-<!-- お名前: <?php print(htmlspecialchars($_REQUEST["my_name"], ENT_QUOTES)); ?><br> -->
-お名前： <?php print($_REQUEST['my_name']); ?>
-<!-- お名前： <?php print($_POST['name']); ?> -->
+お名前：<?php print(htmlspecialchars($_REQUEST['my_name'], ENT_QUOTES)); ?><br>
+メッセージ: <?php print(htmlspecialchars($_REQUEST["message"], ENT_QUOTES)); ?>
 
 </pre>
 </main>

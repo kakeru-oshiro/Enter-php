@@ -18,13 +18,39 @@
 <main>
 <h2>フォームに入力した内容を取得する</h2>
 
-<div class="content">
+<!-- <div class="content">
 <form action="submit.php" method="get">  
   <label for="my_name">お名前：</label>
   <input type="text" id="my_name" name="my_name" maxlength="255" value="">
   <input type="submit" value="送信する">
 </form>
-</div>
+</div> -->
+<!-- <div class="content">
+  <form action="submit.php" method="get">
+    <label for="my_name">お名前：</label>
+    <input type="text" id="my_name" name="my_name" maxlength="255" value="">
+    <input type="submit" value="送信する">
+  </form>
+</div> -->
+<!-- <div class="content">
+  <form action="submit.php" method="POST">
+    <label for="name">秘密のお名前：</label>
+    <input type="text" id="name" name="name" maxlength="255" value="">
+    <input type="submit" value="送信する">
+  </form>
+</div> -->
+<form action="practice17.php" method="get">
+  <dl>
+    <dt><label for="my_name">お名前：</label></dt>
+    <dd>
+      <input id="my_name" type="text" name="my_name" size="35" maxlength="255" value="" />
+    </dd>
+    <dt><label for="message" >メッセージ</label></dt>
+    <dd><input type="text" name="message" size="35" maxlength="255" value="" />
+    </dd>
+  </dl>
+  <input type="submit" value="はー！">
+</form>
 </main>
 </body>
 </html>
