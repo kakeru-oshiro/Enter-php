@@ -17,8 +17,11 @@
 
 <main>
 <h2>ラジオボタンの値を取得する</h2>
-<pre>
+<!-- <pre>
 性別： <?php print(htmlspecialchars($_POST['gender'], ENT_QUOTES)); ?>
+</pre> -->
+<pre>
+血液型： <?php print(htmlspecialchars($_POST['blood'], ENT_QUOTES)); ?>
 </pre>
 </main>
 </body>

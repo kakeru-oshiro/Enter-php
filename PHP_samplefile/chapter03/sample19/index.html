@@ -18,7 +18,7 @@
 <main>
 <h2>チェックボックスの値を取得する</h2>
 
-<div class="content">
+<!-- <div class="content">
 <form action="submit.php" method="post">  
   <p>ご予約希望日（複数選択可）</p>
   
@@ -30,6 +30,19 @@
   
   <input type="submit" value="送信する">
 </form>
+</div> -->
+<div>
+  <form action="submit.php" method="post">
+    <p>あたなの好きな日（複数選択可）</p>
+
+    <p>
+      <input type="checkbox" name="reserve[]" value="5/6"> 5月6日<br>
+      <input type="checkbox" name="reserve[]" value="7/18"> 7月18日<br>
+      <input type="checkbox" name="reserve[]" value="1/20"> 1月20日<br>
+    </p>
+
+    <input type="submit" value="送信する">
+  </form>
 </div>
 </main>
 </body>

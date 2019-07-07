@@ -17,13 +17,21 @@
 
 <main>
 <h2>チェックボックスの値を取得する</h2>
-<pre>
+<!-- <pre>
 ご予約日：
 <?php
 foreach ($_POST['reserve'] as $reserve) {
   print(htmlspecialchars($reserve, ENT_QUOTES) . ' ');
 }
 ?>
+</pre> -->
+<pre>
+  好きな日:
+  <?php 
+  foreach ($_POST['reserve'] as $reserve) {
+    print(htmlspecialchars($reserve, ENT_QUOTES)." ");
+  }
+  ?>
 </pre>
 </main>
 </body>

@@ -17,7 +17,7 @@
 
 <main>
 <h2>半角数字に直して、数字であるかをチェックする</h2>
-<pre>
+<!-- <pre>
 <?php
 $age = 'あいうえお';
 
@@ -28,6 +28,18 @@ if (is_numeric($age)) {
   print('※ 年齢が数字ではありません');
 }
 ?>
+</pre> -->
+<pre>
+  <?php 
+  $age='１５';
+
+  $age = mb_convert_kana($age, 'n', 'UTF-8');
+  if (is_numeric($age)) {
+    print($age.'歳');
+  }else {
+    print('※ 年齢が数字ではありません');
+  }
+  ?>
 </pre>
 </main>
 </body>
