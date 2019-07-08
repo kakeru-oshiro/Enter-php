@@ -18,7 +18,7 @@
 <main>
 <h2>一行ごとにテーブルセルの色を変える - 剰余算</h2>
 <table>  
-<?php
+<!-- <?php
 for ($i=1; $i<=10; $i++) {
   if ($i % 2) {
     print('<tr style="background-color: #ccc">');
@@ -27,6 +27,23 @@ for ($i=1; $i<=10; $i++) {
   }
   print('<td>' . $i . '行目</td>');
   print('</tr>');
+}
+?> -->
+<!-- <?php
+for ($i=1; $i<=10; $i++) {
+  if ($i % 2) {
+    print('<tr style="background-color: #ccc">');
+  }else{
+    print('<tr>');
+  }
+  print('<td>'. $i . '行目</td>');
+  print('</tr>');
+}
+?> -->
+<?php 
+$week = ['金', '土', '日', '月', '火', '水', '木'];
+for ($i = 1; $i <= 30; $i++) {
+  print($i . '日(' . $week[$i%7] . ')<br />');
 }
 ?>
 </table>

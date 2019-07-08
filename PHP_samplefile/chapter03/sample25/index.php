@@ -1,7 +1,11 @@
 <?php
 session_start();
-$_SESSION['session_message'] = '値をセッションに保存しました';
+$_SESSION['session_kakeru'] = 'かけるをセッションにぶっこみました';
 ?>
+<!-- <?php
+session_start();
+$_SESSION['session_message'] = '値をセッションに保存しました';
+?> -->
 <!doctype html>
 <html lang="ja">
 <head>

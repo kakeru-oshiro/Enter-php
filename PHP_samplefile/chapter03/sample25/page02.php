@@ -19,7 +19,8 @@
 <main>
 <h2>セッションに値を保存する</h2>
 <pre>
-セッションの値： <?php print($_SESSION['session_message']); ?>
+セッションの値： <?php print($_SESSION['session_message']); ?> <br>
+セッションの値２： <?php print($_SESSION['session_kakeru']); ?>
 <?php session_unset(); ?>
 </pre>
 </main>
