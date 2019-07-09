@@ -1,4 +1,18 @@
-<?php
+<?php 
+$email = 'masterj@h2o-space.com';
+
+mb_language('japanese');
+mb_internal_encoding('UTF-8');
+
+$from = 'noreply@example.com';
+$subject = 'よくわるよそのメール';
+$body = 'このめーるはけるけあおおしろ';
+
+$success = mb_send_mail($mail, $subject, $body, 'From: '. $from);
+
+?>
+
+<!-- <?php
 $email = 'master@h2o-space.com';
 
 mb_language('japanese');
@@ -9,7 +23,7 @@ $subject = 'よくわかるPHPの教科書';
 $body = 'このメールは、『よくわかるPHPの教科書』から送信しています';
 
 $success = mb_send_mail($email, $subject, $body, 'From: ' . $from);
-?>
+?> -->
 <!doctype html>
 <html lang="ja">
 <head>

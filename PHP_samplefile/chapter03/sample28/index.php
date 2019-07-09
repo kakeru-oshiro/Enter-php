@@ -17,11 +17,19 @@
 
 <main>
 <h2>ファイルアップロードを受信する</h2>
-<form action="submit.php" method="post" enctype="multipart/form-data">
+<form action="submit.php" method = "post" enctype = "multipart/form-data">
+<input type="text" name="OK">
+写真: <input type="file" name="picture">
+<input type="submit" value="送信しちゃうぞ">
+</form>
+<!-- <form action="submit.php" method="post" enctype="multipart/form-data">
 <input type="text" name="ok">
 写真： <input type="file" name="picture">
 <input type="submit" value="送信する">
-</form>
+</form> -->
+<?php
+print ini_get('upload_tmp_dir');
+?>
 </main>
 </body>
 </html>
