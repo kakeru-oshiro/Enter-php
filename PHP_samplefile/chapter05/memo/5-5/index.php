@@ -18,21 +18,33 @@
 <main>
 <h2>データの一覧画面を作る</h2>
 <?php
-try {
+//try {
+//    $db = new PDO('mysql:dbname=mydb;host=127.0.0.1;charset=utf8', 'root', '');
+//} catch (PDOException $e) {
+//    echo 'DB接続エラー： ' . $e->getMessage();
+//}
+
+try{
     $db = new PDO('mysql:dbname=mydb;host=127.0.0.1;charset=utf8', 'root', '');
 } catch (PDOException $e) {
-    echo 'DB接続エラー： ' . $e->getMessage();
+    echo 'DB接続エラー: ' . $e->getMessage();
 }
 
-$memos = $db->query('SELECT * FROM memos ORDER BY id DESC');
+$memos = $db->query('SELECT * FROM memos ORDER BY id DESC ');
+
 ?>
-<article>
-<?php while ( $memo = $memos->fetch()): ?>
-<p><a href="memo.php?id=<?php print($memo['id']); ?>"> <?php print(mb_substr($memo['memo'], 0, 50)); ?></a></p>
-<time><?php print($memo['created_at']); ?></time>
-<hr>
-<?php endwhile; ?>
-</article>
+<articl>
+    <?php while($memo = $memos->fetch()):?>
+        <p>
+            <a href="memo.php?id=<?php print($memo['id']); ?>">
+                <?php print(mb_substr($memo['memo'], 0, 50)); ?>
+                <?php print((mb_strlen($memo['memo']) > 50 ? '...' : '')); ?>
+            </a>
+        </p>
+    <time><?php print($memo['created_at']); ?></time>
+    <hr>
+    <?php endwhile;?>
+</articl>
 </main>
 </body>
 </html>
