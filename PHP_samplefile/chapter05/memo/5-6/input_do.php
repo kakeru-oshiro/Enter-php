@@ -20,7 +20,10 @@
 <h2>フォームからの情報を保存する</h2>
 <pre>
 <?php
-$statement = $db->prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
+//$statement = $db->prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
+//$statement->execute(array($_POST['memo']));
+//echo 'メモが登録されました';
+$statement = $db->prepare('INSERT INTO memos SET memo=?, created_at= NOW()');
 $statement->execute(array($_POST['memo']));
 echo 'メモが登録されました';
 ?>

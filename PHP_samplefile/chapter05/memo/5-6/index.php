@@ -1,4 +1,4 @@
-<?php require('dbconnect.php'); ?>
+<?php require('dbconnect1.php'); ?>
 <!doctype html>
 <html lang="ja">
 <head>
@@ -17,10 +17,15 @@
 </header>
 
 <main>
-<h2>データの一覧画面を作る</h2>
+<!--<h2>データの一覧画面を作る</h2>-->
 <?php
-$memos = $db->query('SELECT * FROM memos ORDER BY id DESC');
-?>
+//$memos = $db->query('SELECT * FROM memos ORDER BY id DESC');
+//?>
+
+<h2>Practice</h2>
+    <?php
+    $memos = $db->query('SELECT * FROM memos ORDER BY id DESC');
+    ?>
 <article>
 <?php foreach ($memos as $memo): ?>
 <p><a href="memo.php?id=<?php print($memo['id']); ?>"><?php print(mb_substr($memo['memo'], 0, 50)); ?><?php print((mb_strlen($memo['memo'])) > 50 ? '...' : ''); ?></a></p>

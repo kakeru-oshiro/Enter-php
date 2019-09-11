@@ -19,6 +19,9 @@
 <main>
 <h2>データの詳細画面を作る</h2>
 <?php
+//$memos = $db->prepare('SELECT * FROM memos WHERE id=?');
+//$memos->execute(array($_REQUEST['id']));
+//$memo = $memos->fetch();
 $memos = $db->prepare('SELECT * FROM memos WHERE id=?');
 $memos->execute(array($_REQUEST['id']));
 $memo = $memos->fetch();
