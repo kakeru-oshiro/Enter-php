@@ -17,13 +17,20 @@
 </header>
 
 <main>
-<h2>メモを変更する、編集画面</h2>
+    <h2>Practice</h2>
+    <?php
+    $statement = $db->prepare('UPDATE memos SET memo=? WHERE id=?');
+    $statement->execute(array($_POST['memo'], $_POST['id']));
+    ?>
+    <p>メモの内容を変更しました</p>
+    <P><a href="index.php">戻る</a></P>
+<!--<h2>メモを変更する、編集画面</h2>-->
 <?php
-$statement = $db->prepare('UPDATE memos SET memo=? WHERE id=?');
-$statement->execute(array($_POST['memo'], $_POST['id']));
-?>
-<pre><p>メモの内容を変更しました</p></pre>
-<p><a href="index.php">戻る</a></p>
+//$statement = $db->prepare('UPDATE memos SET memo=? WHERE id=?');
+//$statement->execute(array($_POST['memo'], $_POST['id']));
+//?>
+<!--<pre><p>メモの内容を変更しました</p></pre>-->
+<!--<p><a href="index.php">戻る</a></p>-->
 </main>
 </body>
 </html>

@@ -17,7 +17,13 @@
 </header>
 
 <main>
-<h2>メモを変更する、編集画面</h2>
+<h2>Practice</h2>
+<!--    --><?php
+//    $memos = $db->prepare('SELECT * FROM memos WHERE id=?');
+//    $memos->execute(array(5));
+//    $memo = $memos->fetch();
+//    ?>
+
 
 <?php
 if (isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) {
@@ -27,12 +33,24 @@ if (isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) {
     $memos->execute(array($id));
     $memo = $memos->fetch();
 }
-?>
-<form action="update_do.php" method="post">
-    <input type="hidden" name="id" value="<?php print($id); ?>">
-    <textarea name="memo" cols="50" rows="10"><?php print($memo['memo']); ?></textarea><br>
-    <button type="submit">登録する</button>
-</form>
+//if (isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) {
+//    $id = $_REQUEST['id'];
+//
+//    $memos = $db->prepare('SELECT * FROM memos WHERE id=?');
+//    $memos->execute(array($id));
+//    $memo = $memos->fetch();
+//}
+//?>
+<!--<form action="update_do.php" method="post">-->
+<!--    <input type="hidden" name="id" value="--><?php //print($id); ?><!--">-->
+<!--    <textarea name="memo" cols="50" rows="10">--><?php //print($memo['memo']); ?><!--</textarea><br>-->
+<!--    <button type="submit">登録する</button>-->
+<!--</form>-->
+    <form action="update_do.php" method="post">
+        <input type="hidden" name="id" value="<?php print($id) ?>">
+        <textarea name="memo" cols="50" rows="10"><?php print($memo['memo']); ?></textarea><br>
+        <button type="submit">登録する</button>
+    </form>
 </main>
 </body>
 </html>
