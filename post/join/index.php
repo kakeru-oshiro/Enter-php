@@ -1,4 +1,6 @@
 <?php
+require('../dbconnect.php');
+
 session_start();
 
 if (!empty($_POST)) {
@@ -23,6 +25,16 @@ if (!empty($_POST)) {
         }
     }
 
+    // 重複アカウントのチェック
+    if (empty($error)) {
+        $member = $db->prepare('SELECT COUNT(*) AS cnt FROM members WHERE email=?');
+        $member->execute(array($_POST['email']));
+        $record = $member->fetch();
+        if ($record['cnt'] > 0) {
+            $error['email'] = 'duplicate';
+        }
+    }
+
 
 
     if (empty($error)) {
@@ -32,10 +44,16 @@ if (!empty($_POST)) {
         $_SESSION['join'] = $_POST;
         $_SESSION['join']['image'] = $image;
         header('Location: check.php');
-        exit;
+        exit();
     }
-
 }
+
+//書き直し
+if ($_REQUEST['action'] == 'rewrite') {
+    $_POST = $_SESSION['join'];
+    $error['rewrite'] = true;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +82,12 @@ if (!empty($_POST)) {
                 <?php endif; ?>
                 </dd>
                 <dt>メールアドレス<span class="required">必須</span></dt>
-                <dd><input type="text" name="email" size="35" maxlength="255" value="<?php htmlspecialchars($_POST['emaol'], ENT_QUOTES); ?>"/>
+                <dd><input type="text" name="email" size="35" maxlength="255" value="<?php echo htmlspecialchars($_POST['email'], ENT_QUOTES); ?>"/>
                 <?php if ($error['email'] == 'blank') : ?>
                     <p class="error">* メールアドレスを入力してください</p>
+                <?php endif; ?>
+                <?php if ($error['email'] == 'duplicate'): ?>
+                    <p class="error">* 指定されたメールアドレスは既に登録されています</p>
                 <?php endif; ?>
                 </dd>
                 <dt>パスワード<span class="required">必須</span></dt>
@@ -85,6 +106,7 @@ if (!empty($_POST)) {
                 <?php endif; ?>
                 <?php if (!empty($error)): ?>
                     <p class="error">* 恐れ入りますが、画像を改めて指定してください</p>
+                <?php endif; ?>
                 </dd>
             </dl>
             <div><input type="submit" value="入力内容を確認する"/></div>
